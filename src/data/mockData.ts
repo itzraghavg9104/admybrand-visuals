@@ -102,5 +102,82 @@ export const tableData = [
     conversions: 78,
     revenue: 5600,
     status: "Paused"
+  },
+  {
+    id: 6,
+    campaign: "Holiday Special 2024",
+    channel: "YouTube Ads",
+    impressions: 89000,
+    clicks: 2650,
+    ctr: 2.98,
+    conversions: 198,
+    revenue: 15200,
+    status: "Active"
+  },
+  {
+    id: 7,
+    campaign: "Mobile App Install",
+    channel: "TikTok",
+    impressions: 234000,
+    clicks: 7200,
+    ctr: 3.08,
+    conversions: 432,
+    revenue: 21600,
+    status: "Active"
+  },
+  {
+    id: 8,
+    campaign: "B2B Lead Generation",
+    channel: "LinkedIn",
+    impressions: 34000,
+    clicks: 890,
+    ctr: 2.62,
+    conversions: 67,
+    revenue: 13400,
+    status: "Active"
+  },
+  {
+    id: 9,
+    campaign: "Local Store Promo",
+    channel: "Google Local",
+    impressions: 23000,
+    clicks: 1100,
+    ctr: 4.78,
+    conversions: 145,
+    revenue: 7250,
+    status: "Completed"
+  },
+  {
+    id: 10,
+    campaign: "Influencer Collaboration",
+    channel: "Instagram",
+    impressions: 78000,
+    clicks: 3400,
+    ctr: 4.36,
+    conversions: 289,
+    revenue: 17340,
+    status: "Active"
+  },
+  {
+    id: 11,
+    campaign: "Spring Collection",
+    channel: "Pinterest",
+    impressions: 112000,
+    clicks: 2800,
+    ctr: 2.50,
+    conversions: 167,
+    revenue: 11690,
+    status: "Paused"
+  },
+  {
+    id: 12,
+    campaign: "Customer Retention",
+    channel: "Email",
+    impressions: 56000,
+    clicks: 3360,
+    ctr: 6.0,
+    conversions: 234,
+    revenue: 14040,
+    status: "Active"
   }
 ];

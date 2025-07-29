@@ -4,7 +4,7 @@ import { chartData } from "@/data/mockData";
 
 export const RevenueChart = () => {
   return (
-    <Card className="animate-fade-in">
+    <Card className="animate-fade-in bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border border-border/50 shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           Revenue Trend

@@ -4,6 +4,7 @@ import { RevenueChart } from "@/components/charts/RevenueChart";
 import { EngagementChart } from "@/components/charts/EngagementChart";
 import { ConversionsChart } from "@/components/charts/ConversionsChart";
 import { CampaignTable } from "@/components/CampaignTable";
+import { Toaster } from "@/components/ui/toaster";
 import { metricsData } from "@/data/mockData";
 import { 
   DollarSign, 
@@ -118,6 +119,7 @@ const Index = () => {
         {/* Data Table */}
         <CampaignTable />
       </div>
+      <Toaster />
     </DashboardLayout>
   );
 };

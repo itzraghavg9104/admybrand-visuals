@@ -19,9 +19,19 @@ import {
   ArrowUp,
   ArrowDown,
   Download,
-  Filter
+  Filter,
+  FileText,
+  FileSpreadsheet
 } from "lucide-react";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { tableData } from "@/data/mockData";
+import { exportToCSV, exportToPDF } from "@/utils/exportUtils";
+import { useToast } from "@/hooks/use-toast";
 
 type SortField = "campaign" | "impressions" | "clicks" | "ctr" | "conversions" | "revenue";
 type SortDirection = "asc" | "desc" | null;
@@ -32,6 +42,7 @@ export const CampaignTable = () => {
   const [sortField, setSortField] = useState<SortField | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>(null);
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const { toast } = useToast();
   
   const itemsPerPage = 5;
 
@@ -94,8 +105,40 @@ export const CampaignTable = () => {
     }
   };
 
+  const handleExportCSV = () => {
+    try {
+      exportToCSV(filteredData, 'campaign-performance');
+      toast({
+        title: "Export Successful",
+        description: "Campaign data has been exported to CSV file.",
+      });
+    } catch (error) {
+      toast({
+        title: "Export Failed",
+        description: "There was an error exporting the data.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleExportPDF = () => {
+    try {
+      exportToPDF(filteredData, 'campaign-performance-report');
+      toast({
+        title: "Export Successful", 
+        description: "Campaign report has been exported to PDF file.",
+      });
+    } catch (error) {
+      toast({
+        title: "Export Failed",
+        description: "There was an error generating the PDF report.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
-    <Card className="animate-fade-in">
+    <Card className="animate-fade-in bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border border-border/50 shadow-lg">
       <CardHeader>
         <CardTitle>Campaign Performance</CardTitle>
         <CardDescription>
@@ -126,10 +169,24 @@ export const CampaignTable = () => {
               <option value="completed">Completed</option>
             </select>
             
-            <Button variant="outline" size="sm">
-              <Download className="h-4 w-4 mr-2" />
-              Export
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0 hover:opacity-90">
+                  <Download className="h-4 w-4 mr-2" />
+                  Export
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={handleExportCSV}>
+                  <FileSpreadsheet className="h-4 w-4 mr-2" />
+                  Export as CSV
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={handleExportPDF}>
+                  <FileText className="h-4 w-4 mr-2" />
+                  Export as PDF
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </CardHeader>
