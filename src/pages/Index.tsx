@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { MetricCard } from "@/components/MetricCard";
 import { RevenueChart } from "@/components/charts/RevenueChart";
@@ -15,7 +16,6 @@ import {
   RefreshCw
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
 
 const Index = () => {
   const [lastUpdated, setLastUpdated] = useState(new Date());
