@@ -4,14 +4,15 @@ import { chartData } from "@/data/mockData";
 
 export const EngagementChart = () => {
   return (
-    <Card className="animate-fade-in bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border border-border/50 shadow-lg">
-      <CardHeader>
-        <CardTitle>User Engagement</CardTitle>
-        <CardDescription>
+    <Card className="group animate-fade-in bg-gradient-card backdrop-blur-sm border border-border/50 shadow-card hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <CardHeader className="relative z-10">
+        <CardTitle className="group-hover:text-primary transition-colors duration-300">User Engagement</CardTitle>
+        <CardDescription className="group-hover:text-foreground transition-colors duration-300">
           Traffic sources breakdown
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="relative z-10">
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

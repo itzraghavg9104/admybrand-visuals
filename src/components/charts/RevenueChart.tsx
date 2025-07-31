@@ -4,16 +4,17 @@ import { chartData } from "@/data/mockData";
 
 export const RevenueChart = () => {
   return (
-    <Card className="animate-fade-in bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border border-border/50 shadow-lg">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+    <Card className="group animate-fade-in bg-gradient-card backdrop-blur-sm border border-border/50 shadow-card hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <CardHeader className="relative z-10">
+        <CardTitle className="flex items-center gap-2 text-foreground group-hover:text-primary transition-colors duration-300">
           Revenue Trend
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="group-hover:text-foreground transition-colors duration-300">
           Monthly revenue over the last 6 months
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="relative z-10">
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData.revenue}>

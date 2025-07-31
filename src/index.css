@@ -57,15 +57,19 @@ All colors MUST be HSL.
     
     /* Dashboard Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 65%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(217 91% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(217 91% 98%));
     --gradient-success: linear-gradient(135deg, hsl(142 76% 50%), hsl(142 76% 35%));
     --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%), hsl(38 92% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(262 83% 65%) 50%, hsl(142 76% 50%) 100%);
+    --gradient-glass: linear-gradient(145deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(210 24% 16% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(210 24% 16% / 0.1), 0 2px 4px -1px hsl(210 24% 16% / 0.06);
     --shadow-lg: 0 10px 15px -3px hsl(210 24% 16% / 0.1), 0 4px 6px -2px hsl(210 24% 16% / 0.05);
     --shadow-xl: 0 20px 25px -5px hsl(210 24% 16% / 0.1), 0 10px 10px -5px hsl(210 24% 16% / 0.04);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 8px 32px hsl(210 24% 16% / 0.08);
     
     /* Chart Colors */
     --chart-1: 217 91% 60%;
@@ -152,5 +156,24 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+  
+  .pulse-slow {
+    @apply animate-pulse;
+    animation-duration: 3s;
   }
 }
