@@ -21,7 +21,13 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const toggleTheme = () => setIsDark(!isDark);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary-subtle to-background text-foreground">
+    <div className="min-h-screen moving-gradient text-foreground relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-1/3 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-float [animation-delay:2s]"></div>
+        <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-white/15 rounded-full blur-3xl animate-float [animation-delay:4s]"></div>
+      </div>
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-white/80 backdrop-blur-md shadow-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +37,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
               <Button variant="ghost" size="sm" className="md:hidden hover:bg-primary/10 transition-colors">
                 <Menu className="h-5 w-5" />
               </Button>
-              <div className="flex items-center gap-2 group">
+              <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.location.href = '/'}>
                 <img 
                   src={admybrandLogo} 
                   alt="ADmyBRAND Insights" 

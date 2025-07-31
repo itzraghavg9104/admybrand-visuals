@@ -9,6 +9,7 @@ interface MetricCardProps {
   changeType: "increase" | "decrease" | "neutral";
   icon: LucideIcon;
   className?: string;
+  onClick?: () => void;
 }
 
 export const MetricCard = ({ 
@@ -17,7 +18,8 @@ export const MetricCard = ({
   change, 
   changeType, 
   icon: Icon,
-  className 
+  className,
+  onClick 
 }: MetricCardProps) => {
   const changeColor = {
     increase: "text-success",
@@ -28,12 +30,15 @@ export const MetricCard = ({
   const changePrefix = changeType === "increase" ? "+" : changeType === "decrease" ? "-" : "";
 
   return (
-    <Card className={cn(
-      "group transition-all duration-500 hover:shadow-card hover:scale-105 animate-fade-in hover:-translate-y-2",
-      "bg-gradient-card border-0 shadow-lg backdrop-blur-sm relative overflow-hidden",
-      "before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100",
-      className
-    )}>
+    <Card 
+      className={cn(
+        "group transition-all duration-500 hover:shadow-card hover:scale-105 animate-fade-in hover:-translate-y-2 cursor-pointer rounded-xl",
+        "bg-gradient-card backdrop-blur-sm border border-border/50 shadow-lg relative overflow-hidden",
+        "before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100",
+        className
+      )}
+      onClick={onClick}
+    >
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
         <CardTitle className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
           {title}

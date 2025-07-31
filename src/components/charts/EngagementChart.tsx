@@ -1,10 +1,16 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
 import { chartData } from "@/data/mockData";
+import { useNavigate } from "react-router-dom";
 
 export const EngagementChart = () => {
+  const navigate = useNavigate();
+
   return (
-    <Card className="group animate-fade-in bg-gradient-card backdrop-blur-sm border border-border/50 shadow-card hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
+    <Card 
+      className="group animate-fade-in bg-gradient-card backdrop-blur-sm border border-border/50 shadow-card hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden cursor-pointer rounded-xl"
+      onClick={() => navigate('/engagement')}
+    >
       <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <CardHeader className="relative z-10">
         <CardTitle className="group-hover:text-primary transition-colors duration-300">User Engagement</CardTitle>
