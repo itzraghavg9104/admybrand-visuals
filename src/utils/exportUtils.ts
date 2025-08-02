@@ -52,7 +52,8 @@ export const exportToCSV = (data: ExportData[], filename: string = 'campaign-dat
 };
 
 export const exportToPDF = (data: ExportData[], filename: string = 'campaign-report') => {
-  const doc = new jsPDF();
+  try {
+    const doc = new jsPDF();
   
   // Add header
   doc.setFontSize(20);
@@ -137,6 +138,10 @@ export const exportToPDF = (data: ExportData[], filename: string = 'campaign-rep
   doc.text(`Total Impressions: ${totalImpressions.toLocaleString()}`, 20, finalY + 65);
   doc.text(`Average CTR: ${avgCTR}%`, 20, finalY + 75);
 
-  // Save the PDF
-  doc.save(`${filename}.pdf`);
+    // Save the PDF
+    doc.save(`${filename}.pdf`);
+  } catch (error) {
+    console.error('PDF Export Error:', error);
+    throw new Error('Failed to generate PDF report');
+  }
 };

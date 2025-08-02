@@ -66,18 +66,18 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 
             {/* Actions */}
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="sm" className="hidden md:flex hover:bg-primary/10 transition-all duration-300 hover:scale-105">
+              <Button variant="ghost" size="sm" className="hidden md:flex hover:bg-primary/10 transition-all duration-300 hover:scale-105 text-foreground">
                 <Bell className="h-4 w-4" />
               </Button>
               <Button 
                 variant="ghost" 
                 size="sm" 
                 onClick={toggleTheme}
-                className="transition-all duration-300 hover:bg-primary/10 hover:scale-105 hover:rotate-12"
+                className="transition-all duration-300 hover:bg-primary/10 hover:scale-105 hover:rotate-12 text-foreground"
               >
                 {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full hover:bg-primary/10 transition-all duration-300 hover:scale-105">
+              <Button variant="ghost" size="sm" className="rounded-full hover:bg-primary/10 transition-all duration-300 hover:scale-105 text-foreground">
                 <User className="h-4 w-4" />
               </Button>
             </div>
