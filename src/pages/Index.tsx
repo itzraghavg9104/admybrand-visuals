@@ -46,7 +46,7 @@ const Index = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
           <div className="space-y-2 bg-gradient-to-r from-primary/10 to-primary/20 backdrop-blur-md border border-primary/20 rounded-2xl px-10 py-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-            <h1 className="text-4xl font-bold text-transparent drop-shadow-lg animate-glow ml-2">
+            <h1 className="text-4xl font-bold text-foreground drop-shadow-lg animate-glow ml-2 bg-transparent">
               Analytics Overview
             </h1>
             <p className="text-foreground/80 text-lg animate-slide-up [animation-delay:200ms] drop-shadow-md ml-2">
