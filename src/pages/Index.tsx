@@ -45,11 +45,11 @@ const Index = () => {
       <div className="space-y-8 animate-fade-in relative z-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
-          <div className="space-y-2">
-            <h1 className="text-4xl font-bold text-foreground drop-shadow-lg animate-glow">
+          <div className="space-y-2 bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl px-8 py-4 shadow-lg">
+            <h1 className="text-4xl font-bold text-foreground drop-shadow-lg animate-glow ml-2">
               Analytics Overview
             </h1>
-            <p className="text-foreground/80 text-lg animate-slide-up [animation-delay:200ms] drop-shadow-md">
+            <p className="text-foreground/80 text-lg animate-slide-up [animation-delay:200ms] drop-shadow-md ml-2">
               Track your marketing performance in real-time
             </p>
           </div>
