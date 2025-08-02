@@ -46,15 +46,15 @@ const Index = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
           <div className="space-y-2">
-            <h1 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent animate-glow">
+            <h1 className="text-4xl font-bold text-foreground drop-shadow-lg animate-glow">
               Analytics Overview
             </h1>
-            <p className="text-muted-foreground text-lg animate-slide-up [animation-delay:200ms]">
+            <p className="text-foreground/80 text-lg animate-slide-up [animation-delay:200ms] drop-shadow-md">
               Track your marketing performance in real-time
             </p>
           </div>
           <div className="flex items-center gap-4 animate-slide-up [animation-delay:400ms]">
-            <div className="text-sm text-muted-foreground bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm border border-border/50">
+            <div className="text-sm text-foreground bg-card/80 px-3 py-1 rounded-full backdrop-blur-sm border border-border/50 shadow-md">
               Last updated: {lastUpdated.toLocaleTimeString()}
             </div>
             <Button 
