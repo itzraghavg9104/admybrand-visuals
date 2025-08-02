@@ -45,7 +45,7 @@ const Index = () => {
       <div className="space-y-8 animate-fade-in relative z-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
-          <div className="space-y-2">
+          <div className="space-y-2 bg-transparent">
             <h1 className="text-4xl font-bold text-foreground drop-shadow-lg animate-glow">
               Analytics Overview
             </h1>
